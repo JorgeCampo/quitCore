@@ -15,11 +15,13 @@ exports.load = function(req, res, next, quizId){
 // GET /quizes
 exports.index = function(req, res){
 
- models.Quiz.findAll().then(
-    function(quizes){
-       res.render('quizes/index.ejs', { quizes: quizes, title: 'Quiz'});}
+var q=req.query.search||"".replace(/\s/g,'%');
+q='%'+q+'%';
+
+models.Quiz.findAll({where: ["pregunta like ?", q], order: [['pregunta','ASC']]}).then(function(quizes){
+       res.render('quizes/index.ejs', { quizes: quizes});}
  	).catch(function(error) {next(error);}) 
- };
+};
 
 // GET /quizes/:id
 exports.show = function(req, res) {
