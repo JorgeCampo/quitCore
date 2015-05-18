@@ -24,7 +24,7 @@
         <% } %>
       </span>
     <% } %>
-<%-body %>
+<div><%-body %> </div>
 </section>
 
 <footer class="main" id="f1">
