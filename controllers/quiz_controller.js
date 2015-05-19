@@ -109,5 +109,17 @@ exports.author = function(req, res){
 	res.render('author', {alumno: 'GONZALO LÁZARO MACEÍN y JORGE CAMPO ÁVILA', errors: []});
 
 
+};
 
-}
+// GET /quizes/statistics
+exports.statistics = function(req, res) {
+ models.Quiz.findAll().then(
+  function(quizes){
+    res.render('quizes/statistics', { quizes: quizes, errors: []});
+  }
+ ).catch(function(error) { next(error);}) 
+};
+
+
+
+

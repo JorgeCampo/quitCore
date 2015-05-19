@@ -9,13 +9,13 @@ header, nav, section { background: #eee; text-align: center;}
 footer {background: #eee; text-align: center;}
 nav span {margin: 0px 10px 0px 0px;}
 table, th, td {
-	padding: 5px;
+	padding: 0px;
 	margin: 0px;
 	font-family: Arial, Helvetica;
 	border-top: 0px;
 	border-left: 8px;
 	font-size: 1em;
-	border:  2px solid #333;
+	border: #333;
 	text-align: left;
 	
 
