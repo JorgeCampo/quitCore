@@ -9,23 +9,23 @@
    <table>
 	<tr>
     		 <th>Numero de preguntas</th>
-		 <td><%= quizes.length %></td>
+		 <td><%= quizes %></td>
      	</tr>
 	<tr>     	
 		 <th>Numero de comentarios totales</th>
-        	 <td><%= comment %> </td>
+        	 <td> <%= comment.length %></td>
      	</tr>
     	<tr>
     		 <th>Media de comentarios por pregunta</th>
-		 <td></td>
+		 <td> <%= comment.length/quizes %></td>
      	</tr>
 	<tr>
     		 <th>Preguntas sin comentarios</th>
-		 <td></td>
+		 <td> <%= no_comments %></td>
      	</tr>
 	<tr>
     		 <th>Preguntas con comentarios</th>
-		 <td></td>
+		 <td> <%= con_comments %></td>
      	</tr>
 
 

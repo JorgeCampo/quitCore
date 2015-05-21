@@ -30,7 +30,7 @@ router.delete('/quizes/:quizId(\\d+)',     sessionController.loginRequired, quiz
 
 router.get('/author',                      sessionController.loginRequired, quizController.author,  sessionController.logout);//cambio realizado en la rama creditos
 
-
+router.get('/quizes/statistics',          sessionController.loginRequired, quizController.statistics, sessionController.logout);
 //Definicion de rutas de comentarios
 
 router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new,  sessionController.logout);

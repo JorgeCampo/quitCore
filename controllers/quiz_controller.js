@@ -113,11 +113,27 @@ exports.author = function(req, res){
 
 // GET /quizes/statistics
 exports.statistics = function(req, res) {
- models.Quiz.findAll().then(
-  function(quizes){
-    res.render('quizes/statistics', { quizes: quizes, errors: []});
-  }
- ).catch(function(error) { next(error);}) 
+	var no_comments=0;
+ 	var con_comments=0;
+	models.Comment.findAll({where:{publicado: true}}).then(function(comment){
+  		models.Quiz.count().then(function(quizes){
+		console.log ("llega aqui");
+				for( j=1; j<quizes+1; j++){
+				console.log ("valor de quizes[j]:" +quizes);
+	 			for( i=0; i<comment.length ; i++){
+					console.log ("valor de comment[i].Quizid:" +comment[i].QuizId );
+	  				if (comment[i].QuizId === quizes-(quizes-j)){
+						console.log( "valor de con_comennts" +no_comments );
+						con_comments++;
+                                	 }
+	              	  	}
+                	}
+			no_comments = quizes-con_comments;
+   		res.render('quizes/statistics', { no_comments: no_comments, con_comments: con_comments, 			quizes: quizes, comment: comment, quiz: req.quiz ,errors: []});
+  	}
+ 	).catch(function(error) { next(error);})
+	}
+	).catch(function(error) { next(error);})
 };
 
 
