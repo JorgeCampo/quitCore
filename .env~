@@ -1,2 +1,2 @@
-DATABASE_URL="postgres://upeslmisxdwvjy:Jnt-HKpLf4Gs5Gr41N5bPA1E7V@ec2-23-21-96-129.compute-1.amazonaws.com:5432/daf9hcvgkgb5ag"
-HEROKU_POSTGRESQL_GRAY_URL="postgres://upeslmisxdwvjy:Jnt-HKpLf4Gs5Gr41N5bPA1E7V@ec2-23-21-96-129.compute-1.amazonaws.com:5432/daf9hcvgkgb5ag"
+DATABASE_URL=sqlite://:@:/
+DATABASE_STORAGE=quiz.sqlite

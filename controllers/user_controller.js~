@@ -1,5 +1,5 @@
 var users = { admin: {id:1, username:"admin", password:"1234"}, 
-              Jorge:  {id:2, username:"Jorge",  password:"2222"}
+              Jorge:  {id:2, username:"Jorge",  password:"2222"},
 	      Gonzalo:  {id:3, username:"Gonzalo",  password:"3333"}
             };
 
