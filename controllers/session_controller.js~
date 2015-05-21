@@ -47,8 +47,8 @@ exports.destroy = function(req, res) {
     res.redirect(req.session.redir.toString()); // redirect a path anterior a login
 };
 
-//timeout
-exports.timeout =function(req,res,next){
+//logout
+exports.logout =function(req,res,next){
 		if(req.session.user){
 		
 		var tiempo =  new Date().getTime(); // variable para obtener el tiempo
