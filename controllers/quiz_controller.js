@@ -37,7 +37,19 @@ models.Quiz.findAll({where: ["pregunta like ?", q], order: [['pregunta','ASC']]}
        res.render('quizes/index.ejs', { quizes: quizes, errors: []});}
  	).catch(function(error) {next(error)}); 
 };
-
+// GET /users/:userId/quizes
+exports.index = function(req, res) {  
+  var options = {};
+  if(req.user){
+    options.where = {UserId: req.user.id}
+  }
+  
+  models.Quiz.findAll(options).then(
+    function(quizes) {
+      res.render('quizes/index.ejs', {quizes: quizes, errors: []});
+    }
+  ).catch(function(error){next(error)});
+};
 // GET /quizes/:id
 exports.show = function(req, res) {
     res.render('quizes/show', { quiz: req.quiz, errors: []});
